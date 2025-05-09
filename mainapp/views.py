@@ -296,13 +296,13 @@ def donate(request):
 
 
 # Retrieve variables from the environment
-CONSUMER_KEY = os.getenv("CONSUMER_KEY")
-CONSUMER_SECRET = os.getenv("CONSUMER_SECRET")
-MPESA_PASSKEY = os.getenv("MPESA_PASSKEY")
-
-MPESA_SHORTCODE = os.getenv("MPESA_SHORTCODE")
-CALLBACK_URL = os.getenv("CALLBACK_URL")
-MPESA_BASE_URL = os.getenv("MPESA_BASE_URL")
+import os
+MPESA_BASE_URL = os.getenv('MPESA_BASE_URL', 'https://sandbox.safaricom.co.ke')
+CONSUMER_KEY = os.getenv("CONSUMER_KEY", 'EaexAtds43sGSabZSWKtBh7dOdgtZYSOaAsEHEhGMxAYgxVk')
+CONSUMER_SECRET = os.getenv("CONSUMER_SECRET", 'A9Q61CeBphoqaPAGTrgDO6t41XMG2hsrQPOOnJ6sPV7xq0KxpAe85xUQGGgRKVEB')
+MPESA_PASSKEY = os.getenv("MPESA_PASSKEY", 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919')      
+MPESA_SHORTCODE = os.getenv("MPESA_SHORTCODE", '174379')
+CALLBACK_URL = os.getenv("CALLBACK_URL", 'https://mydomain.com/path/')
 
 # Phone number formatting and validation
 def format_phone_number(phone):
