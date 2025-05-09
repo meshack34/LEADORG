@@ -1,7 +1,20 @@
 
 
 from pathlib import Path
+
+from dotenv import load_dotenv
 import os
+
+# Load .env file
+load_dotenv()
+
+# Now these will work:
+CONSUMER_KEY = os.getenv("CONSUMER_KEY")
+CONSUMER_SECRET = os.getenv("CONSUMER_SECRET")
+MPESA_PASSKEY = os.getenv("MPESA_PASSKEY")
+MPESA_SHORTCODE = os.getenv("MPESA_SHORTCODE")
+CALLBACK_URL = os.getenv("CALLBACK_URL")
+MPESA_BASE_URL = os.getenv("MPESA_BASE_URL")
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
