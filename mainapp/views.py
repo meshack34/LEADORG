@@ -338,6 +338,7 @@ def generate_access_token():
         raise Exception(f"Failed to connect to M-Pesa: {str(e)}")
 
 # Initiate STK Push and handle response
+
 def initiate_stk_push(phone, amount):
     try:
         token = generate_access_token()
@@ -372,7 +373,10 @@ def initiate_stk_push(phone, amount):
 
     except Exception as e:
         print(f"Failed to initiate STK Push: {str(e)}")
-        return e
+        return {"errorMessage": str(e)}  # ✅ always return a dict
+
+
+       
 
 # Payment View
 def payment_view(request):
