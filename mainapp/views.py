@@ -304,6 +304,7 @@ MPESA_PASSKEY = os.getenv("MPESA_PASSKEY", 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c
 MPESA_SHORTCODE = os.getenv("MPESA_SHORTCODE", '174379')
 CALLBACK_URL = os.getenv("CALLBACK_URL", 'https://mydomain.com/path/')
 
+mpesa_url = f"{MPESA_BASE_URL}/oauth/v1/generate?grant_type=client_credentials"
 # Phone number formatting and validation
 def format_phone_number(phone):
     phone = phone.replace("+", "")
