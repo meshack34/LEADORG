@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/utilities/bsb-overlay/bsb-overlay.css">
     <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/components/services/service-8/assets/css/service-8.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <link rel="stylesheet" href="{% static 'css/newteam.css' %}">
+    <link rel="stylesheet" href="{% static 'css/team.css' %}">
     <link rel="icon" href="{% static 'images/leadlogo.jpeg' %}" type="image/png">
 
 </head>
@@ -29,87 +29,113 @@
 <!-- Header and Navigation -->
 {% include 'header.html' %}
 
+<section>
+    <br><br><div></div>
+</section>
 
-    <!-- Hero Section -->
-    <section class="hero-section text-center">
-        <div class="container">
-            <div class="text-center">
-                <h1 class="text-uppercase fw-bold">BOARD OF DIRECTORS LEAD ORGANIZATION</h1>
-                <p class="text-muted">Meet the professionals behind our success</p>
-            </div>
-    
-            <div class="row mt-4">
-                <!-- Team Member 1 -->
-                <div class="col-md-4">
-                    <div class="card team-card">
-                        <img src="{% static 'images/new.enc' %}" class="card-img-top" alt="Samson Kirui">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Samson Kiplangat Kirui</h5>
-                            <p class="card-text">Director & CEO LEAD Organization</p>
-                            <p class="card-text">MSc in Agriculture & Rural Development, BSc & Diploma in Agriculture</p>
-                            <p class="card-text">35+ years in Agriculture Extension & Project Management</p>
-                            <p><strong>Phone:</strong> +254723475444</p>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- Team Member 2 -->
-                <div class="col-md-4">
-                    <div class="card team-card">
-                        <img src="{% static 'images/new.enc' %}" class="card-img-top" alt="Lucy Hepkemoi">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Lucy Hepkemoi</h5>
-                            <p class="card-text">Organization Treasurer</p>
-                            <p class="card-text">Certificate in Accounts, Record Keeping & IT Data Management</p>
-                            <p class="card-text">25+ years in Finance Management</p>
-                            <p><strong>Phone:</strong> +254725331177</p>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- Team Member 3 -->
-                <div class="col-md-4">
-                    <div class="card team-card">
-                <img src="{% static 'images/new.enc' %}" class="card-img-top" alt="David Koech">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">David Koech</h5>
-                            <p class="card-text">Organization Secretary</p>
-                            <p class="card-text">Diploma in Land Survey & Land Use Planning</p>
-                            <p><strong>Phone:</strong> +254720461660</p>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- Team Member 4 -->
-                <div class="col-md-4">
-                    <div class="card team-card">
-                        <img src="{% static 'images/new.enc' %}" class="card-img-top" alt="Joshua Kipsige Rono">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Joshua Kipsige Rono</h5>
-                            <p class="card-text">Retired Teacher</p>
-                            <p class="card-text">Expert in Community Mobilization & Career Development for Youth</p>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- Team Member 5 -->
-                <div class="col-md-4">
-                    <div class="card team-card">
-                        <img src="{% static 'images/new.enc' %}" class="card-img-top" alt="Benard Kiplangat Too">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Benard Kiplangat Too</h5>
-                            <p class="card-text">Agriculture Extension & Education Expert</p>
-                            <p class="card-text">MSc in Agriculture Economics & Resource Management</p>
-                            <p class="card-text">23+ years in Agriculture Extension & Project Management</p>
-                            <p><strong>Phone:</strong> +254</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<section class="hero-section text-center py-5 bg-light">
+    <div class="container">
+        <div class="mb-5">
+            <h1 class="text-uppercase fw-bold text-primary">Board of Directors</h1>
+            <p class="text-muted">Meet the professionals behind LEAD Organization’s mission and success</p>
         </div>
+
+        <div class="row g-4 justify-content-center">
+            {% comment %} Loop through team members if using dynamic rendering {% endcomment %}
+            <!--  Team Member 1 -->
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="card team-card h-100">
+                    <img src="{% static 'images/new.enc' %}" class="card-img-top" alt="Samson Kirui">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Samson Kiplangat Kirui</h5>
+                        <p class="card-text">Director & CEO</p>
+                        <p class="card-text small">MSc in Agriculture & Rural Development</p>
+                        <p class="card-text small">35+ years in Agriculture Extension & Project Management</p>
+                        <p class="card-text small"><strong>Phone:</strong> +254723475444</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add similar blocks for other members... -->
+
+            <!-- Team member 2 Victor Cheruiyot -->
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="card team-card h-100">
+                    <img src="{% static 'images/victor.png' %}" class="card-img-top" alt="Victor Cheruiyot">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Victor Cheruiyot</h5>
+                        <p class="card-text">Extension Officer & Volunteer</p>
+                        <p class="card-text small">Expert in Climate Smart Agriculture, Farmer Training & Table Banking</p>
+                    </div>
+                </div>
+            </div>
+
+              <!-- Team member 3  -->
+
+             <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="card team-card h-100">
+                    <img src="{% static 'images/new.enc' %}" class="card-img-top" alt="Samson Kirui">
+                    <div class="card-body text-center">
+                        <h5 class="card-title"> Lucy CHepkemoi</h5>
+                        <p class="card-text">Organization Treasurer</p>
+                        <p class="card-text small">Certificate in Accounts, Record Keeping & IT Data Management</p>
+                        <p class="card-text small">25+ years in Finance Management</p>
+                        <p class="card-text small"><strong>Phone:</strong> +254725331177</p>
+                    </div>
+                </div>
+            </div>
+
+               <!-- Team member 4  -->
+               
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="card team-card h-100">
+                    <img src="{% static 'images/victor.png' %}" class="card-img-top" alt="Victor Cheruiyot">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">David Koech</h5>
+                        <p class="card-text">Organization Secretary</p>
+                        <p class="card-text small">Diploma in Land Survey & Land Use Planning</p>
+                        <p class="card-text small"><strong>Phone:</strong> +254720461660</p>
+            </div>
+                </div>
+                  </div>
+
+
+                   <!-- Team member 5  -->
+             <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="card team-card h-100">
+                    <img src="{% static 'images/new.enc' %}" class="card-img-top" alt="Samson Kirui">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Joshua Kipsige Rono</h5>
+                        <p class="card-text">Retired Teacher</p>
+                        <p class="card-text small">Expert in Community Mobilization & Career Development for Youth</p>
+                         {% comment %} <p class="card-text small"></p> {% endcomment %}
+                        <p class="card-text small"><strong>Phone:</strong> </p>
+                    </div>
+                </div>
+            </div>
+
+              <!-- Team member 6 -->
+             <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="card team-card h-100">
+                    <img src="{% static 'images/new.enc' %}" class="card-img-top" alt="Samson Kirui">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Benard Kiplangat Too</h5>
+                        <p class="card-text">Agriculture Extension & Education Expert</p>
+                        <p class="card-text small">MSc in Agriculture Economics & Resource Management</p>
+                        <p class="card-text small">23+ years in Agriculture Extension & Project Management</p>
+                        <p class="card-text small"><strong>Phone:</strong> +254</p>
+                    </div>
+                </div>
+            </div>
+
+
              
 
-    </section>
+        </div>
+    </div>
+</section>
+
+
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
