@@ -7,8 +7,6 @@ from .models import Transaction
 from .forms import PaymentForm
 from dotenv import load_dotenv
 
-# Load environment variables
-load_dotenv()
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
@@ -23,6 +21,18 @@ from .forms import PartnershipForm
 from django.core.mail import send_mail
 from .models import Partnership
 
+
+# Load environment variables
+load_dotenv()
+
+# Retrieve variables from the environment
+CONSUMER_KEY = os.getenv("CONSUMER_KEY")
+CONSUMER_SECRET = os.getenv("CONSUMER_SECRET")
+MPESA_PASSKEY = os.getenv("MPESA_PASSKEY")
+
+MPESA_SHORTCODE = os.getenv("MPESA_SHORTCODE")
+CALLBACK_URL = os.getenv("CALLBACK_URL")
+MPESA_BASE_URL = os.getenv("MPESA_BASE_URL")
 
 
 
@@ -294,17 +304,6 @@ def donate(request):
     return render(request, 'donate.html')
 
 
-
-# Retrieve variables from the environment
-import os
-MPESA_BASE_URL = os.getenv('MPESA_BASE_URL', 'https://sandbox.safaricom.co.ke')
-CONSUMER_KEY = os.getenv("CONSUMER_KEY", 'EaexAtds43sGSabZSWKtBh7dOdgtZYSOaAsEHEhGMxAYgxVk')
-CONSUMER_SECRET = os.getenv("CONSUMER_SECRET", 'A9Q61CeBphoqaPAGTrgDO6t41XMG2hsrQPOOnJ6sPV7xq0KxpAe85xUQGGgRKVEB')
-MPESA_PASSKEY = os.getenv("MPESA_PASSKEY", 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919')      
-MPESA_SHORTCODE = os.getenv("MPESA_SHORTCODE", '174379')
-CALLBACK_URL = os.getenv("CALLBACK_URL", 'https://mydomain.com/path/')
-
-mpesa_url = f"{MPESA_BASE_URL}/oauth/v1/generate?grant_type=client_credentials"
 # Phone number formatting and validation
 def format_phone_number(phone):
     phone = phone.replace("+", "")
@@ -339,7 +338,6 @@ def generate_access_token():
         raise Exception(f"Failed to connect to M-Pesa: {str(e)}")
 
 # Initiate STK Push and handle response
-
 def initiate_stk_push(phone, amount):
     try:
         token = generate_access_token()
@@ -374,10 +372,7 @@ def initiate_stk_push(phone, amount):
 
     except Exception as e:
         print(f"Failed to initiate STK Push: {str(e)}")
-        return {"errorMessage": str(e)}  # ✅ always return a dict
-
-
-       
+        return e
 
 # Payment View
 def payment_view(request):

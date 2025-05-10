@@ -15,23 +15,13 @@ MPESA_ENV = os.getenv('MPESA_ENV', 'sandbox')  # default to sandbox
 MPESA_CALLBACK_URL = os.getenv('MPESA_CALLBACK_URL')
 
 
-# Now these will work:
-
-MPESA_BASE_URL = os.getenv("MPESA_BASE_URL")
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
-
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-fndni7(z2mx+3bbgk=v3h5rkq#v90b7)n2d-x%-9ex_%@k*bi)'
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ['*']
+
+SECRET_KEY = 'django-insecure-fndni7(z2mx+3bbgk=v3h5rkq#v90b7)n2d-x%-9ex_%@k*bi)'
+
 
 
 # Application definition
